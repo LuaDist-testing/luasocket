@@ -1,10 +1,10 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "luasocket"
-version = "2.0.2-4"
+version = "2.0.2-5"
 -- LuaDist source
 source = {
-  tag = "2.0.2-4",
+  tag = "2.0.2-5",
   url = "git://github.com/LuaDist-testing/luasocket.git"
 }
 -- Original source
@@ -22,6 +22,9 @@ description = {
    ]],
    homepage = "http://luaforge.net/projects/luasocket/",
    license = "MIT"
+}
+dependencies = {
+   "lua >= 5.1, < 5.2"
 }
 build = {
    type = "make",
