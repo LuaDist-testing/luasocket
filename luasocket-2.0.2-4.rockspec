@@ -1,10 +1,10 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "luasocket"
-version = "2.0.2-3"
+version = "2.0.2-4"
 -- LuaDist source
 source = {
-  tag = "2.0.2-3",
+  tag = "2.0.2-4",
   url = "git://github.com/LuaDist-testing/luasocket.git"
 }
 -- Original source
@@ -19,7 +19,9 @@ description = {
       that provides support for the TCP and UDP transport layers, and a set of Lua
       modules that add support for functionality commonly needed by applications
       that deal with the Internet.
-   ]]
+   ]],
+   homepage = "http://luaforge.net/projects/luasocket/",
+   license = "MIT"
 }
 build = {
    type = "make",
@@ -64,5 +66,6 @@ build = {
             }
          }
       }
-   }
+   },
+   copy_directories = { "doc", "samples", "etc", "test" }
 }
