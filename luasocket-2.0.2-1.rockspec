@@ -1,16 +1,16 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "luasocket"
-version = "2.0.1-3"
+version = "2.0.2-1"
 -- LuaDist source
 source = {
-  tag = "2.0.1-3",
+  tag = "2.0.2-1",
   url = "git://github.com/LuaDist-testing/luasocket.git"
 }
 -- Original source
 -- source = {
---    url = "http://luaforge.net/frs/download.php/1589/luasocket-2.0.1.tar.gz",
---    md5 = "9ca22fd9f9413b54802d3d40b38c4e5c"
+--    url = "http://luaforge.net/frs/download.php/2664/luasocket-2.0.2.tar.gz",
+--    md5 = "41445b138deb7bcfe97bff957503da8e"
 -- }
 description = {
    summary = "Network support for the Lua language",
