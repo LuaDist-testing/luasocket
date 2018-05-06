@@ -1,10 +1,10 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "luasocket"
-version = "2.0.2-2"
+version = "2.0.2-3"
 -- LuaDist source
 source = {
-  tag = "2.0.2-2",
+  tag = "2.0.2-3",
   url = "git://github.com/LuaDist-testing/luasocket.git"
 }
 -- Original source
@@ -35,7 +35,7 @@ build = {
    platforms = {
       macosx = {
          build_variables = {
-            CFLAGS = "$(CFLAGS) -DLUASOCKET_DEBUG -DUNIX_HAS_SUN_LEN -fno-common -I$(LUADIR)"
+            CFLAGS = "$(CFLAGS) -DLUASOCKET_DEBUG -DUNIX_HAS_SUN_LEN -fno-common -I$(LUA_INCDIR)"
          }
       },
       windows={
