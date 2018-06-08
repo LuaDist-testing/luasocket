@@ -1,10 +1,10 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "luasocket"
-version = "2.0.1-2"
+version = "2.0.1-3"
 -- LuaDist source
 source = {
-  tag = "2.0.1-2",
+  tag = "2.0.1-3",
   url = "git://github.com/LuaDist-testing/luasocket.git"
 }
 -- Original source
@@ -21,7 +21,6 @@ description = {
       that deal with the Internet.
    ]]
 }
---[[
 build = {
    type = "make",
    build_variables = {
@@ -36,19 +35,8 @@ build = {
    platforms = {
       macosx = {
          build_variables = {
-            CFLAGS = "$(CFLAGS) -DLUASOCKET_DEBUG -DUNIX_HAS_SUN_LEN -fno-common"
+            CFLAGS = "$(CFLAGS) -DLUASOCKET_DEBUG -DUNIX_HAS_SUN_LEN -fno-common -I$(LUA_INCDIR)"
          }
-      }
-   }
-}
-]]
-build = {
-   type = "command",
-   build_command = "make LDFLAGS='$(LIBFLAG) -O -fpic' LD='$(CC)' CFLAGS='$(CFLAGS) -DLUASOCKET_DEBUG -I$(LUA_INCDIR)'",
-   install_command = "make install INSTALL_TOP_SHARE='$(LUADIR)' INSTALL_TOP_LIB='$(LIBDIR)'",
-   platforms = {
-      macosx = {
-         build_command = "make LDFLAGS='$(LIBFLAG) -O -fpic' LD='$(CC)' CFLAGS='$(CFLAGS) -DLUASOCKET_DEBUG -DUNIX_HAS_SUN_LEN -fno-common'",
       }
    }
 }
