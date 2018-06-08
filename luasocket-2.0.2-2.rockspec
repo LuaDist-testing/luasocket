@@ -1,10 +1,10 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "luasocket"
-version = "2.0.2-1"
+version = "2.0.2-2"
 -- LuaDist source
 source = {
-  tag = "2.0.2-1",
+  tag = "2.0.2-2",
   url = "git://github.com/LuaDist-testing/luasocket.git"
 }
 -- Original source
@@ -35,7 +35,33 @@ build = {
    platforms = {
       macosx = {
          build_variables = {
-            CFLAGS = "$(CFLAGS) -DLUASOCKET_DEBUG -DUNIX_HAS_SUN_LEN -fno-common -I$(LUA_INCDIR)"
+            CFLAGS = "$(CFLAGS) -DLUASOCKET_DEBUG -DUNIX_HAS_SUN_LEN -fno-common -I$(LUADIR)"
+         }
+      },
+      windows={
+         type= "command",
+         build_command=
+            "set INCLUDE=$(LUA_INCDIR);%INCLUDE% &"..
+            "set LIB=$(LUA_LIBDIR);%LIB% &"..
+            "msbuild /p:\"VCBuildAdditionalOptions= /useenv\" luasocket.sln &"..
+            "mkdir mime & mkdir socket &"..
+            "cp src/mime.dll mime/core.dll &"..
+            "cp src/socket.dll socket/core.dll",
+         install= {
+            lib = {
+               ["mime.core"] = "mime/core.dll",
+               ["socket.core"] = "socket/core.dll"
+            },
+            lua = {
+               "src/ltn12.lua",
+               "src/mime.lua",
+               "src/socket.lua",
+               ["socket.ftp"] = "src/ftp.lua",
+               ["socket.http"] = "src/http.lua",
+               ["socket.smtp"] = "src/smtp.lua",
+               ["socket.tp"] = "src/tp.lua",
+               ["socket.url"] = "src/url.lua",               
+            }
          }
       }
    }
